@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
                 $event->setCancelled();
                 $event->setXpDropAmount(0);
                 $player->addXp($event->getXpDropAmount());
-                $block->getLevelNonNull()->setBlock($block->asVector3(), Block::get(Block::BEDROCK));
+                $block->getLevelNonNull()->setBlock($block->asVector3(), Block::get(Block::STONE));
                 $this->getScheduler()->scheduleDelayedTask(new DelayTask($this, $block), 20 * $this->config->get("delay"));
             } elseif($block->getId() === Block::IRON_ORE && $this->config->get("iron_ore") === true){
                 foreach ($event->getDrops() as $drop) {
@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener{
                 $event->setCancelled();
                 $event->setXpDropAmount(0);
                 $player->addXp($event->getXpDropAmount());
-                $block->getLevelNonNull()->setBlock($block->asVector3(), Block::get(Block::BEDROCK));
+                $block->getLevelNonNull()->setBlock($block->asVector3(), Block::get(Block::STONE));
                 $this->getScheduler()->scheduleDelayedTask(new DelayTask($this, $block), 20 * $this->config->get("delay"));
             } elseif($block->getId() === Block::GOLD_ORE && $this->config->get("gold_ore") === true){
                 foreach ($event->getDrops() as $drop) {
